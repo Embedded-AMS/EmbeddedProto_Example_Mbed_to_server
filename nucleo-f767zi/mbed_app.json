@@ -1,0 +1,9 @@
+{
+    "target_overrides": {
+        "*": {
+            "platform.stdio-convert-newlines": true,
+            "target.network-default-interface-type": "ETHERNET",
+            "platform.callback-nontrivial": true
+        }
+    }
+}

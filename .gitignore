@@ -1,0 +1,9 @@
+# Ignore the generated source code.
+nucleo-f767zi/generated
+desktop/generated
+
+# Ignore the python virtualenv folder
+desktop/venv
+
+# Ignore the pycharm project folder.
+desktop/.idea
