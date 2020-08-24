@@ -1,7 +1,5 @@
 import socket
-import signal
 import sys
-from threading import Thread
 from generated import eth_messages_pb2
  
 if __name__ == "__main__":
