@@ -165,7 +165,7 @@ int main() {
 
     while(1)
     {
-        ThisThread::sleep_for(1000);
+        ThisThread::sleep_for(1s);
     }
 
 }
