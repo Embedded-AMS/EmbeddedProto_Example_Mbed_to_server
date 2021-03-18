@@ -1,3 +1,6 @@
 [submodule "EmbeddedProto"]
 	path = EmbeddedProto
 	url = https://github.com/Embedded-AMS/EmbeddedProto.git
+[submodule "nucleo-f767zi/mbed-os"]
+	path = nucleo-f767zi/mbed-os
+	url = https://github.com/ARMmbed/mbed-os.git
