@@ -145,7 +145,8 @@ int main() {
 
 
     a.set_port(50000);
-    valid =  a.set_ip_address("192.168.137.1");
+    // Substitute the IP address of your server here.
+    valid =  a.set_ip_address("192.168.0.101");
     
     printf("Connect to: %s\n", (a.get_ip_address() ? a.get_ip_address() : "None") );
     if(!valid){
