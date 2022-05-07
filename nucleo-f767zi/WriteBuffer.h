@@ -34,14 +34,14 @@
 #include <cstdint>
 #include <WriteBufferInterface.h>
 
-class UartWriteBuffer : public ::EmbeddedProto::WriteBufferInterface
+class WriteBuffer : public ::EmbeddedProto::WriteBufferInterface
 {
     //! Store a maximum of MAX_SIZE bytes in the buffer
     static constexpr uint32_t MAX_SIZE = 50;
 
   public:
-    UartWriteBuffer() = default;
-    ~UartWriteBuffer() override = default;
+    WriteBuffer() = default;
+    ~WriteBuffer() override = default;
 
     //! \see ::EmbeddedProto::WriteBufferInterface::clear()
     virtual void clear() override;
