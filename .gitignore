@@ -7,3 +7,9 @@ desktop/venv
 
 # Ignore the pycharm project folder.
 desktop/.idea
+
+# Ignore python byte code and libraries
+*.pyc
+desktop/lib
+
+

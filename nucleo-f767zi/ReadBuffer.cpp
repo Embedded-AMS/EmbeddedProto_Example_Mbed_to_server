@@ -28,9 +28,9 @@
  *    the Netherlands
  */
 
-#include "UartReadBuffer.h"
+#include "ReadBuffer.h"
 
-UartReadBuffer::UartReadBuffer()
+ReadBuffer::ReadBuffer()
   : data_{0},
     write_index_(0),
     read_index_(0)
@@ -38,17 +38,17 @@ UartReadBuffer::UartReadBuffer()
 
 }
 
-uint32_t UartReadBuffer::get_size() const
+uint32_t ReadBuffer::get_size() const
 {
   return write_index_;
 }
 
-uint32_t UartReadBuffer::get_max_size() const
+uint32_t ReadBuffer::get_max_size() const
 {
   return MAX_SIZE;
 }
 
-bool UartReadBuffer::peek(uint8_t& byte) const
+bool ReadBuffer::peek(uint8_t& byte) const
 {
   bool return_value = write_index_ > read_index_;
   if(return_value)
@@ -58,17 +58,17 @@ bool UartReadBuffer::peek(uint8_t& byte) const
   return return_value;
 }
 
-void UartReadBuffer::advance()
+void ReadBuffer::advance()
 {
   ++read_index_;
 }
 
-void UartReadBuffer::advance(const uint32_t N)
+void ReadBuffer::advance(const uint32_t N)
 {
   read_index_ += N;
 }
 
-bool UartReadBuffer::pop(uint8_t& byte)
+bool ReadBuffer::pop(uint8_t& byte)
 {
   bool return_value = write_index_ > read_index_;
   if(return_value) {
@@ -78,23 +78,23 @@ bool UartReadBuffer::pop(uint8_t& byte)
   return return_value;
 }
 
-uint8_t* UartReadBuffer::get_data_array()
+uint8_t* ReadBuffer::get_data_array()
 {
   return data_;
 }
 
-uint32_t& UartReadBuffer::get_bytes_written()
+uint32_t& ReadBuffer::get_bytes_written()
 {
   return write_index_;
 }
 
-void UartReadBuffer::clear()
+void ReadBuffer::clear()
 {
   read_index_ = 0;
   write_index_ = 0;
 }
 
-bool UartReadBuffer::push(uint8_t& byte)
+bool ReadBuffer::push(uint8_t& byte)
 {
   bool return_value = MAX_SIZE > write_index_;
   if(return_value)

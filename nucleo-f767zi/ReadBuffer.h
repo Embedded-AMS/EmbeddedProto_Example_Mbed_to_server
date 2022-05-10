@@ -34,14 +34,14 @@
 #include <cstdint>
 #include <ReadBufferInterface.h>
 
-class UartReadBuffer : public ::EmbeddedProto::ReadBufferInterface
+class ReadBuffer : public ::EmbeddedProto::ReadBufferInterface
 {
     //! Store a maximum of MAX_SIZE bytes in the buffer
     static constexpr uint32_t MAX_SIZE = 50;
 
   public:
-    UartReadBuffer();
-    ~UartReadBuffer() override = default;
+    ReadBuffer();
+    ~ReadBuffer() override = default;
 
     /** \see ::EmbeddedProto::ReadBufferInterface::get_size() */
     uint32_t get_size() const override;
