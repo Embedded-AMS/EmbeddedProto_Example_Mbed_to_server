@@ -2,8 +2,8 @@
 #include "mbed_events.h"
 #include "EthernetInterface.h"
 #include "eth_messages.h"
-#include "UartReadBuffer.h"
-#include "UartWriteBuffer.h"
+#include "ReadBuffer.h"
+#include "WriteBuffer.h"
 #include <Errors.h>
 
 
@@ -14,8 +14,8 @@ InterruptIn button(USER_BUTTON);
 DigitalOut led2(LED2);
 DigitalOut led3(LED3);
 
-UartReadBuffer read_buffer;
-UartWriteBuffer write_buffer;
+ReadBuffer read_buffer;
+WriteBuffer write_buffer;
 Status status;
 
 EventQueue queue;
