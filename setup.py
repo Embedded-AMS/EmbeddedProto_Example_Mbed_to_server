@@ -34,6 +34,7 @@ import os
 import venv
 import platform
 from sys import stderr
+import shutil
 
 # Perform a system call to beable to display colors on windows
 os.system("")
@@ -176,7 +177,11 @@ if __name__ == "__main__":
         # Run the setup script of Embedded Proto it self.
         EPSetup.run(args)
         
-        os.chdir("..")   
+        os.chdir("..")
+
+        # Copy source files to make Mbed Studio happy as it is not able to include files in the parent dir?!
+        shutil.copytree("EmbeddedProto/src", "nucleo-f767zi/EmbeddedProtoSrc/src", dirs_exist_ok=True) 
+
         
     # ---------------------------------------
     if not args.generate:
