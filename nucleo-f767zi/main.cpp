@@ -2,9 +2,10 @@
 #include "mbed_events.h"
 #include "EthernetInterface.h"
 #include "eth_messages.h"
-#include "ReadBuffer.h"
-#include "WriteBuffer.h"
+#include <ReadBufferFixedSize.h>
+#include <WriteBufferFixedSize.h>
 #include <Errors.h>
+#include <cstdint>
 
 
 EthernetInterface eth;
@@ -14,8 +15,9 @@ InterruptIn button(USER_BUTTON);
 DigitalOut led2(LED2);
 DigitalOut led3(LED3);
 
-ReadBuffer read_buffer;
-WriteBuffer write_buffer;
+constexpr uint32_t BUFFER_SIZE = 50;
+::EmbeddedProto::ReadBufferFixedSize<BUFFER_SIZE> read_buffer;
+::EmbeddedProto::WriteBufferFixedSize<BUFFER_SIZE> write_buffer;
 Status status;
 
 EventQueue queue;
