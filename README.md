@@ -25,13 +25,11 @@ You can use Mbed Studio or Mbed CLI to build this example. In this example we de
 1. Install Mbed Studio if you have not already.
 2. Install the dependencies required by Embedded Proto. They are listed [here](https://github.com/Embedded-AMS/EmbeddedProto).
 3. Checkout this example repository including the submodule of Embedded Proto: `git clone --recursive https://github.com/Embedded-AMS/EmbeddedProto_Example_STM32_ETH.git`.
-4. Make setup.sh and generate_source_files.sh executable. `chmod +x setup.sh` and `chmod +x generate_source_files.sh`.
-5. Setup the environment required for Embedded Proto and the desktop script by running the setup script: `./setup.sh`. 
-This script also copies the Embedded Proto source code into the Mbed Studio project.
-6. Open Mbed Studio and select the nucleo-f767zi folder as workspace (file > open workspace).
-7. Checkout the mbed os library, you can do this in the libraries tab in Mbed Studio.
+4. Setup the environment required for Embedded Proto and the desktop script by running the setup script: `python setup.py`. This script also copies the Embedded Proto source code into the Mbed Studio project.
+5. Open Mbed Studio and select the nucleo-f767zi folder as workspace (file > open workspace).
+6. Checkout the mbed os library, you can do this in the libraries tab in Mbed Studio.
 
-The setup script already does it for you but you can regenerate the source code using the `./generate_source_files.sh` script. This is required when you have changed the \*.proto file.
+The setup script already does it for you but you can regenerate the source code using the `python setup.py --generate` parameter. This is required when you have changed the \*.proto file.
 
 
 # Running the code
