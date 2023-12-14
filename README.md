@@ -1,8 +1,8 @@
 
-![alt text](https://embeddedproto.com/wp-content/uploads/2020/03/Embedded-Proto-e1583834233386.png "Embedded Proto Logo")
+![alt text](https://embeddedproto.com/wp-content/uploads/2022/04/Embedded_Proto.png  "Embedded Proto Logo")
 
 
-Copyrights 2020 Embedded AMS B.V. Amsterdam, [www.EmbeddedAMS.nl](https://www.EmbeddedAMS.nl), [info@EmbeddedAMS.nl](mailto:info@EmbeddedAMS.nl)
+Copyrights 2020-2024 Embedded AMS B.V. Hoorn, [www.EmbeddedAMS.nl](https://www.EmbeddedAMS.nl), [info@EmbeddedAMS.nl](mailto:info@EmbeddedAMS.nl)
 
 
 Looking for a more elaborate description of this example? Please visit: Mbed OS ethernet example link
