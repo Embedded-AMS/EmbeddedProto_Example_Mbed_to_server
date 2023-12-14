@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2020-2022 Embedded AMS B.V. - All Rights Reserved
+# Copyright (C) 2020-2024 Embedded AMS B.V. - All Rights Reserved
 #
 # This file is part of Embedded Proto.
 #
@@ -23,8 +23,8 @@
 #   info at EmbeddedProto dot com
 #
 # Postal address:
-#   Johan Huizingalaan 763a
-#   1066 VH, Amsterdam
+#   Atoomweg 2
+#   1627 LE, Hoorn
 #   the Netherlands
 #
 
@@ -170,6 +170,27 @@ if __name__ == "__main__":
     if not os.path.exists(newpath):
         os.makedirs(newpath)
      
+
+    # ---------------------------------------
+    # Clean excisting venv and other generated files.
+    if args.clean:
+        shutil.rmtree("./desktop/venv", ignore_errors=True)     
+     
+        try:
+            os.remove("./desktop/generated/eth_messages_pb2.py")
+        except FileNotFoundError:
+            # This exception we can safely ignore as it means the file was not there. In that case we do not have to remove
+            # it.
+            pass
+
+        try:
+            os.remove("./nucleo-f446re/generated/eth_messages.h")
+        except FileNotFoundError:
+            # This exception we can safely ignore as it means the file was not there. In that case we do not have to remove
+            # it.
+            pass
+    
+
     # ---------------------------------------
     if not args.generate:
         os.chdir("./EmbeddedProto")
