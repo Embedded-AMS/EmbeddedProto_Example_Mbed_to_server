@@ -170,6 +170,27 @@ if __name__ == "__main__":
     if not os.path.exists(newpath):
         os.makedirs(newpath)
      
+
+    # ---------------------------------------
+    # Clean excisting venv and other generated files.
+    if args.clean:
+        shutil.rmtree("./desktop/venv", ignore_errors=True)     
+     
+        try:
+            os.remove("./desktop/generated/eth_messages_pb2.py")
+        except FileNotFoundError:
+            # This exception we can safely ignore as it means the file was not there. In that case we do not have to remove
+            # it.
+            pass
+
+        try:
+            os.remove("./nucleo-f446re/generated/eth_messages.h")
+        except FileNotFoundError:
+            # This exception we can safely ignore as it means the file was not there. In that case we do not have to remove
+            # it.
+            pass
+    
+
     # ---------------------------------------
     if not args.generate:
         os.chdir("./EmbeddedProto")
